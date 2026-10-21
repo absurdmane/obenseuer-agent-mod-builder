@@ -19,9 +19,26 @@ find "<this folder>/.git/FETCH_HEAD" -mmin -1440
 
 If this prints nothing, run `git -C "<this folder>" pull --ff-only`. If the pull fails, say so in one line and go on. Never reset, stash or force anything here.
 
+## Know who you're working with
+
+Before you explain anything, work out the user's level, and match it. Explaining basics to an experienced developer wastes their time and is irritating. Skipping basics loses a beginner.
+
+1. **Check what you already know.** Look in your memory, in the project's `CLAUDE.md` / `AGENTS.md`, and at any note you left before. If the level is recorded, use it and don't ask again.
+2. **Read the signals.** How they phrase the request: "patch the getter" or "make the fridge better". Whether a `.csproj`, git history or other mods already exist. Whether tools are already installed (`dotnet --version`, BepInEx in the game folder). Their questions.
+3. **If it's still unclear, ask once,** in one short question, for example: "Have you written C# or mods before (for this or another game), or is this your first?"
+4. **Remember it.** Save a short note in your memory if you have one; otherwise offer to add one line to the project's `CLAUDE.md` / `AGENTS.md`, for example "User: experienced C# developer, new to Unity modding". Update it when the signals change.
+
+How to adapt:
+
+- **New to programming or modding:** follow `topics/getting-started.md`. Go step by step, explain each new term once, and check each step works before the next.
+- **Developer, new to Unity or game modding:** skip C#, git and build basics. Explain only what is specific: Harmony, Unity object lifetime, BepInEx, why the game must be closed while deploying.
+- **Experienced modder (another Unity or BepInEx game):** be brief. Point out only what is particular to Obenseuer and to this workflow: the template, the config conventions, the pitfalls in the topic files. Give no tutorials.
+
+At every level: never explain something they have just shown they know, and don't repeat an explanation.
+
 ## Workflow
 
-0. **New to modding?** If the user has never built a mod (no .NET SDK, no BepInEx, unsure what a dll is), start with `topics/getting-started.md` and get a tiny first mod running before anything bigger.
+0. **New to modding?** If the user is a beginner (see above), start with `topics/getting-started.md` and get a tiny first mod running before anything bigger.
 1. **Agree on behaviour.** Talk through what the player sees and does, edge cases, and what happens when the mod is off or removed. Ask about behaviour, not numbers: every gameplay number goes into config with a placeholder default, to tune in playtests. Write a short design note with a Config table (`topics/config.md`).
 2. **Find the game code.** Check the knowledge base first, then the decompiled game (`topics/setup.md`, "Reading the game code"). Look for the narrowest patch point, and read what every method you call does to an object that is already set up.
 3. **Create the project** from `template/` (`topics/setup.md`). It builds against the user's game install.
