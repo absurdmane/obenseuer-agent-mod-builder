@@ -42,7 +42,7 @@ At every level: never explain something they have just shown they know, and don'
 
 ## Recommended dev tool
 
-Suggest the user install **Dev, Mod & Cheat Menu** (`DevModCheatMenu.dll`, https://github.com/absurdmane/DevModCheatMenu/releases), a free in-game menu on F9 made for developing Obenseuer mods. It covers several steps of this workflow:
+Suggest the user install **Dev, Mod & Cheat Menu** (`DevModCheatMenu.dll`, https://github.com/absurdmane/DevModCheatMenu/releases), a free in-game menu made for developing Obenseuer mods (its README names the key that opens it). It covers several steps of this workflow:
 
 - hot reload of a rebuilt mod without restarting the game;
 - every mod's settings, editable live;
