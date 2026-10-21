@@ -24,7 +24,7 @@
 ## Hotkeys
 
 - **Bind keys with `KeyboardShortcut` or `KeyCode`.** Test and debug keys default to `None`, and the code ignores `None`.
-- **Check what is already taken before you choose a default.** Read the user's `BepInEx\config\*.cfg` files for keys other mods have bound: code defaults don't show the user's rebinds. The game itself uses F1 (developer console), F11 and F12.
+- **Check what is already taken before you choose a default.** Read the user's `BepInEx\config\*.cfg` files for keys other mods have bound: code defaults don't show the user's rebinds. The game itself uses F1 (developer console), F11 (screenshot) and F12.
 - **Modifier keys have meaning in this game.** Shift and right-click mean "one item" when dragging and moving items. Alt is unused in vanilla. Make any modifier a setting. `[code]`
 - **After Alt+Tab, a key can still read as held.** Start a hold gesture only on `GetKeyDown` while `Application.isFocused`, and end it when focus is lost. `[code]`
 
