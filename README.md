@@ -6,7 +6,14 @@ It is built from what was learned making and releasing several Obenseuer mods: t
 
 Target: Obenseuer 0.5.08 (Unity 6, Mono), BepInEx 6 (Unity Mono), HarmonyX, C# `netstandard2.1`.
 
-Windows only. Obenseuer is released for Windows only, so the paths, commands and install steps here assume Windows. Playing through Proton on Linux or Steam Deck may work, but it hasn't been tested and isn't covered.
+### Why Windows only
+
+- **The game is a Windows game.** Obenseuer ships only as a Windows build, so the mods you write run inside a Windows program, whatever computer the code was written on.
+- **The loader is Windows-specific.** BepInEx for this game is the Windows x64 build. It hooks into the game through a proxy dll (`winhttp.dll`) that Windows loads next to `Obenseuer.exe`.
+- **Testing happens in the game.** Every change has to be checked in game, so the machine that builds the mod is in practice the machine that runs the game. The fast loop is: build, deploy into the game folder, start the game.
+- **The paths are Windows paths.** The game's code lives in `Obenseuer_Data\Managed`, the mods in `BepInEx\plugins`, and the logs and configs in `BepInEx\`. The template, the commands and the test steps all use these paths.
+
+The tools themselves are not the limit: C#, the .NET SDK, git and the decompiler all run on Linux and macOS. On Linux or Steam Deck the game can be run through Proton, and BepInEx may work there with the right launch options, but this setup hasn't been tested and isn't covered here.
 
 ## What you need
 
