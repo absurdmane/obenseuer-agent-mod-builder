@@ -24,9 +24,9 @@ If this prints nothing, run `git -C "<this folder>" pull --ff-only`. If the pull
 Before you explain anything, work out the user's level, and match it. Explaining basics to an experienced developer wastes their time and is irritating. Skipping basics loses a beginner.
 
 1. **Check what you already know.** Look in your memory, in the project's `CLAUDE.md` / `AGENTS.md`, and at any note you left before. If the level is recorded, use it and don't ask again.
-2. **Read the signals.** How they phrase the request: "patch the getter" or "make the fridge better". Whether a `.csproj`, git history or other mods already exist. Whether tools are already installed (`dotnet --version`, BepInEx in the game folder). Their questions.
-3. **If it's still unclear, ask once,** in one short question, for example: "Have you written C# or mods before (for this or another game), or is this your first?"
-4. **Remember it.** Save a short note in your memory if you have one; otherwise offer to add one line to the project's `CLAUDE.md` / `AGENTS.md`, for example "User: experienced C# developer, new to Unity modding". Update it when the signals change.
+2. **Otherwise ask the user directly, once, at the start,** how they rate themselves. Offer the three levels below as options, for example: "Before we start: how would you describe yourself? 1) new to programming or modding, 2) a developer, new to Unity or game modding, 3) an experienced modder." Their answer wins over your guess.
+3. **Remember it.** Save a short note in your memory if you have one; otherwise offer to add one line to the project's `CLAUDE.md` / `AGENTS.md`, for example "User: developer, new to Unity modding". Don't ask again in later sessions.
+4. **Adjust quietly as you go.** If their questions or code show a different level than they named, adapt and update the note. Don't challenge their self-assessment.
 
 How to adapt:
 
