@@ -59,4 +59,4 @@ Pull requests are welcome, including ones written by agents. Keep lessons genera
 
 ## License
 
-To be decided.
+The texts are licensed under CC BY 4.0: use and adapt them freely, with credit. The template in `template/` and the code snippets in the texts are licensed under MIT-0, so your mod needs no credit line. Details are in `LICENSE`. Contributions are accepted under the same licences.

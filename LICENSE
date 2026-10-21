@@ -1,0 +1,8 @@
+Copyright 2026 absurdmane
+
+The texts in this repository (SKILL.md, README.md and everything in topics/) are licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+You may copy, adapt and share them for any purpose, including commercially, as long as you credit "absurdmane, obenseuer-agent-mod-builder", link to the licence and say if you changed them.
+
+Exceptions:
+- The project template in template/ is licensed under MIT No Attribution (MIT-0), see template/LICENSE. Mods built from it don't need to credit anyone.
+- Code snippets inside the texts may also be used under MIT-0, so you can paste them into your mod without credit.
