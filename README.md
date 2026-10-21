@@ -6,6 +6,8 @@ It is built from what was learned making and releasing several Obenseuer mods: t
 
 Target: Obenseuer 0.5.08 (Unity 6, Mono), BepInEx 6 (Unity Mono), HarmonyX, C# `netstandard2.1`.
 
+Windows only. Obenseuer is released for Windows only, so the paths, commands and install steps here assume Windows. Playing through Proton on Linux or Steam Deck may work, but it hasn't been tested and isn't covered.
+
 ## What you need
 
 - Obenseuer.

@@ -7,6 +7,8 @@ description: How to make a BepInEx mod for the game Obenseuer (Unity 6 Mono, Bep
 
 How to build an Obenseuer mod that works on the first try, survives save loads and game updates, and can be removed without breaking a save. It covers the craft of modding. For how the game works inside (classes, patch points, mechanics), use the `obenseuer-agent-knowledge-base` skill when it is installed; if it is not, suggest it to the user once.
 
+Windows only: the game is released for Windows only, so paths, commands and install steps assume Windows. If the user is on Linux or Steam Deck (Proton), say that this setup is untested and covered only by their own experiments.
+
 All paths below are relative to this skill's folder (the folder that holds this file). Lessons in the topic files were seen in game unless marked `[code]` (read from code or design, not tested).
 
 ## Update check (once a day)
