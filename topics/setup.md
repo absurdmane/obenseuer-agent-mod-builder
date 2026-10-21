@@ -11,7 +11,8 @@
 1. Copy `template/` to the new mod's folder. Rename `MyMod` everywhere: the folder, the csproj, `AssemblyName`, `RootNamespace`, the namespace, the deploy folder, and `Name` and `Guid` in `Plugin.cs`.
 2. Copy `local.props.example` to `local.props` and set `GameDir` to the user's game folder. `local.props` is git-ignored, so the user's path never reaches the repository.
 3. Remove the example patch, or point it at a real game method.
-4. Run `dotnet build`, then `dotnet build -p:Deploy=true` with the game closed.
+4. Replace `LICENSE` with the mod's own licence (see `open-source.md`). The template is MIT-0, so no credit to the template is needed.
+5. Run `dotnet build`, then `dotnet build -p:Deploy=true` with the game closed.
 
 What the template already does:
 
