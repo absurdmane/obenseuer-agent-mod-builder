@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Unity 6 Mono exposes the .NET Standard 2.1 API surface; net6.0+ assemblies don't load there. -->
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>MyMod</AssemblyName>
+    <RootNamespace>MyMod</RootNamespace>
+    <Description>One line about what the mod does</Description>
+    <Authors>YourName</Authors>
+    <!-- Keep equal to Plugin.Version. -->
+    <Version>0.1.0</Version>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <DebugType>embedded</DebugType>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- dotnet build -p:Deploy=true copies the dll into BepInEx\plugins\MyMod. Close the game first. -->
+    <Deploy Condition="'$(Deploy)' == ''">false</Deploy>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Makes private game members visible at compile time (Mono doesn't enforce access checks at run time). -->
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="$(BepInExCore)\BepInEx.Core.dll" Private="false" />
+    <Reference Include="$(BepInExCore)\BepInEx.Unity.Mono.dll" Private="false" />
+    <Reference Include="$(BepInExCore)\0Harmony.dll" Private="false" />
+
+    <Reference Include="$(ManagedDir)\Assembly-CSharp.dll" Publicize="true" Private="false" />
+    <Reference Include="$(ManagedDir)\UnityEngine.dll" Private="false" />
+    <Reference Include="$(ManagedDir)\UnityEngine.CoreModule.dll" Private="false" />
+    <!-- Add more as needed: UnityEngine.UIModule, Unity.TextMeshPro, UnityEngine.IMGUIModule, UnityEngine.InputLegacyModule, ... -->
+  </ItemGroup>
+
+  <Target Name="DeployToGame" AfterTargets="Build" Condition="'$(Deploy)' == 'true'">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameDir)\BepInEx\plugins\MyMod" />
+    <Message Importance="high" Text="MyMod -> $(GameDir)\BepInEx\plugins\MyMod" />
+  </Target>
+
+</Project>
