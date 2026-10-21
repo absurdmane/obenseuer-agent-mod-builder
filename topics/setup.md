@@ -40,11 +40,20 @@ What the template already does:
 
 ### Hot reload (optional)
 
-BepInEx doesn't reload plugins. A separate host plugin can load mods from another folder, for example `BepInEx\scripts\`, and reload them while the game runs. If you use one:
+BepInEx doesn't reload plugins. Dev, Mod & Cheat Menu (see `SKILL.md`) loads mods from `BepInEx\scripts\<Mod>\` and reloads them while the game runs: Reload → Reload changed, or its `ReloadScriptsKey`. It loads the dll from memory, so the file isn't locked and can be overwritten while the game runs. To use it:
 
-- Add a second deploy target that copies to that folder and deletes the copy in `plugins`, so the mod isn't loaded twice.
-- The mod must undo everything in `OnDestroy` (see `lifecycle.md`).
-- The host must load each build under a new assembly name. Mono's `Assembly.Load(bytes)` silently returns the already loaded assembly when the name and version match.
+- Add a second deploy target that copies to `BepInEx\scripts\<Mod>\` and deletes the copy in `plugins`; a mod in both folders is skipped in `scripts`. This is the one deploy that is safe while the game runs.
+
+```xml
+<Target Name="DeployToScripts" AfterTargets="Build" Condition="'$(Deploy)' == 'scripts'">
+  <Delete Files="$(GameDir)\BepInEx\plugins\MyMod\MyMod.dll" />
+  <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameDir)\BepInEx\scripts\MyMod" />
+</Target>
+```
+
+- The mod must undo everything in `OnDestroy` (see `lifecycle.md`), or the old and new copies both run.
+- Setup that happens only when a scene or object starts won't re-run for what already exists: also set it up for existing objects in `Awake`.
+- If you write your own reload host: load each build under a new assembly name. Mono's `Assembly.Load(bytes)` silently returns the already loaded assembly when the name and version match.
 - Hot reload hides bugs that appear only on a fresh start, so every test round still includes a cold start (see `testing.md`).
 
 ## Reading the game code

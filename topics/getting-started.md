@@ -9,6 +9,7 @@ Use this when the user is new to modding or programming. Go one step at a time. 
 - **The .NET SDK** (version 6 or newer) to build mods. Check with `dotnet --version`.
 - **Git,** to get updates of this skill and to keep the mod's history.
 - **ilspycmd,** to read the game's code: `dotnet tool install -g ilspycmd`.
+- **Dev, Mod & Cheat Menu** (recommended, see `SKILL.md`), installed like any mod into `BepInEx\plugins\`. With it, a beginner sees and changes their mod's settings in game (F9, Mods tab), and later reloads the mod without restarting the game.
 - **An editor** is optional. The agent writes the code, but Visual Studio Code or Rider helps to look around.
 
 ## 2. The first mod

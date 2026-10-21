@@ -10,6 +10,11 @@
 - **Descriptions are player-facing.** Say what the setting changes. If it needs a game restart, say so, and make sure that is really true.
 - **Keep a Config table in the design note** with key, default, and meaning.
 
+## Seeing settings in game
+
+- **Dev, Mod & Cheat Menu** (F9, Mods tab) shows every mod's config in bind order, with `[Mod] Enabled` on top, and saves changes at once. The mod is notified through `SettingChanged`. It needs nothing from your mod, and it is the quickest way to test the live master switch and tune numbers in playtests.
+- **Status line and buttons for players:** a static class named `DevMenu` in the plugin's namespace adds them to your mod's section. `public static string Status()` gives a live line, and every `public static void` method without parameters becomes a button, labelled by `[System.ComponentModel.Description("...")]`. No reference to the menu is needed; without it the class is a few unused lines. Keep it to what matters to players (a status, "refresh now"); leave one-off debug code out.
+
 ## Live changes
 
 - **Each patch checks `Enabled` and returns early or runs the original.** This is the cheapest live switch and needs no unpatching.

@@ -36,6 +36,18 @@ How to adapt:
 
 At every level: never explain something they have just shown they know, and don't repeat an explanation.
 
+## Recommended dev tool
+
+Suggest the user install **Dev, Mod & Cheat Menu** (`DevModCheatMenu.dll`, https://github.com/absurdmane/DevModCheatMenu/releases), a free in-game menu on F9 made for developing Obenseuer mods. It covers several steps of this workflow:
+
+- hot reload of a rebuilt mod without restarting the game;
+- every mod's settings, editable live;
+- a world inspector and a UI inspector that write `-latest.txt` reports an agent can read;
+- an FPS window and a spike profiler;
+- cheats to set up test situations: items, money, time, teleport, and quick save and load.
+
+The topic files say where each part helps. It is optional: everything here works without it.
+
 ## Workflow
 
 0. **New to modding?** If the user is a beginner (see above), start with `topics/getting-started.md` and get a tiny first mod running before anything bigger.

@@ -19,6 +19,7 @@ The tools themselves are not the limit: C#, the .NET SDK, git and the decompiler
 
 - Obenseuer.
 - An AI coding agent that can run commands on your computer, such as Claude Code, Codex or Cursor.
+- Recommended: [Dev, Mod & Cheat Menu](https://github.com/absurdmane/DevModCheatMenu/releases), an in-game menu for mod development. It gives you hot reload, live settings, world and UI inspectors, an FPS window and cheats for setting up tests.
 - Some time for the first setup: the agent walks you through installing BepInEx and the .NET SDK.
 
 ## Setup

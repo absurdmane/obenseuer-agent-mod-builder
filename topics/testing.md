@@ -44,12 +44,14 @@ Every round also includes:
 
 - **Self-checks at startup** for assumptions that a game update could break: the patched methods exist, a transpiler found its call sites, an IL hash matches, the expected UI parents exist. Log a clear line for each failure and switch off only the affected feature.
 - **A debug option that runs vanilla next to your code** and logs the first difference catches subtle bugs in real saves. Keep it off by default.
+- **Set up test situations with cheats instead of playing to them.** Dev, Mod & Cheat Menu spawns items and furniture, sets money, skills and needs, shifts the time of day and game speed, changes Tenement upgrades, teleports, and quick-saves and loads (Reload tab). Name the exact menu steps in the test list. Cheats change the save, so test on a copy.
 - **A test button or hotkey** (default `None`) that triggers a rare event, for example a power cut, a breakdown or a spawn, turns a five-minute wait into one key press.
 
 ## Performance tests
 
 - **Ask what will be measured before you claim a speed-up or "no impact",** and measure in game.
 - **Time the patched code itself:** a `Stopwatch` started in a prefix and stopped in a postfix. Log the call count, the average and the maximum every N seconds, behind a debug option.
+- **Quick look first:** Dev, Mod & Cheat Menu's FPS window (90th and 99th percentile, graph, GC marks) with the mod switched on and off in its Mods tab.
 - **Frame time:** record `Time.unscaledDeltaTime` over a fixed route or idle period. Compare the 99th percentile and the worst frames, not just the average: players feel hitches, not averages.
 - **Compare on and off in the same session** with the master switch: same save, same spot, warm runs (repeat after the first load, since caches warm up). Note the hardware, the save and the game version.
 - **Allocations:** steady per-frame allocations show up as periodic GC hitches. Compare `GC.CollectionCount(0)` per minute with the mod on and off.
