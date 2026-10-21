@@ -73,7 +73,7 @@ The topic files say where each part helps. It is optional: everything here works
 4. **Implement** following `topics/harmony.md`, `topics/lifecycle.md`, and `topics/ui.md` / `topics/saves.md` as needed.
 5. **Build and deploy.** The game must be closed when you write into `BepInEx\plugins` (on Windows check `tasklist`). Never start, close or kill the game yourself.
 6. **Test.** Run the automated tests yourself, then hand over a manual test list (`topics/testing.md`); when something fails, `topics/debugging.md`. The human runs every in-game test. Report plainly what was seen in game and what wasn't.
-7. **Release** (`topics/releasing.md`). Commit, push, tag and publish only on the user's go.
+7. **Release** (`topics/releasing.md`). Commit, push, tag and publish only on the user's go. When writing the mod's public texts, offer once an optional credit line for this skill (see "Public texts").
 
 ## Rules against the most common bugs
 

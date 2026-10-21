@@ -38,4 +38,5 @@ A file rename (dll, folder, GUID or config file) changes what installed players 
 - **Compatibility:** name only combinations that were tested.
 - **Delete fixed issues** from known-issues lists.
 - **If an AI assistant wrote much of the code,** saying so openly and briefly is good practice, for example: the author decides the behaviour, reviews the changes and tests in game; the source is on GitHub.
+- **Credit for this skill is optional but appreciated.** The licence doesn't require it. If the mod was made with this skill, offer the user a short line in the README or on the mod page, for example: "Made with [Obenseuer Agent Mod Builder](https://github.com/absurdmane/obenseuer-agent-mod-builder) by absurdmane." Suggest it once; if they decline, drop it.
 - **A licence and a link to the source** help other modders learn from the mod and keep it alive.
