@@ -24,7 +24,7 @@ The tools themselves are not the limit: C#, the .NET SDK, git and the decompiler
 
 ## Setup
 
-Claude Code: clone it into your mod project's skills folder, or into `~/.claude/skills/` to have it in every project. The skill loads by itself when a task is about making an Obenseuer mod, and it pulls updates at most once a day.
+Claude Code: clone it into your mod project's skills folder, or into `~/.claude/skills/` to have it in every project. The skill loads by itself when a task is about making an Obenseuer mod, and once a day it offers to update itself (`git pull`); it never updates without your yes.
 
 ```bash
 git clone https://github.com/absurdmane/obenseuer-agent-mod-builder .claude/skills/obenseuer-agent-mod-builder
