@@ -1,6 +1,6 @@
 # Obenseuer Agent Mod Builder
 
-Always wanted to change something in Obenseuer but never written a line of code? Describe the mod to your AI coding agent, and this skill teaches the agent how to build it properly: set up the tools with you, create a project that builds on the first try, find the right spot in the game's code, write the patch, and hand you a checklist for testing in game. You decide what the mod does and play-test it; the agent does the plumbing.
+Always wanted to change something in Obenseuer but never written a line of code? Describe the mod to your AI coding agent, and this skill teaches the agent how to build it: set up the tools with you, start from a ready project template, find the right spot in the game's code, write the patch, and hand you a checklist for testing in game. You decide what the mod does and play-test it; the agent does the plumbing.
 
 It is built from what was learned making and releasing several Obenseuer mods: the project template, the workflow, and the pitfalls that cost real bugs, so your agent doesn't have to rediscover them. Experienced modders get a checklist of things that bite in this game: rebuilt UI, save safety, mod conflicts, game updates.
 
@@ -19,7 +19,7 @@ The tools themselves are not the limit: C#, the .NET SDK, git and the decompiler
 
 - Obenseuer.
 - An AI coding agent that can run commands on your computer, such as Claude Code, Codex or Cursor.
-- About half an hour for the first setup. The agent walks you through installing BepInEx and the .NET SDK.
+- Some time for the first setup: the agent walks you through installing BepInEx and the .NET SDK.
 
 ## Setup
 
